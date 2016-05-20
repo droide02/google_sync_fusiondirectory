@@ -55,7 +55,6 @@ class fusionapi {
         // ajout de l'adresse email à l'utilisateur
         $client->update($session_id, 'user', $userDN[0], 'mailAccount', array(
             'mail' => "$mail",
-            'gosaMailServer' => 'gmail',
         ));
 
         if (isset($result['errors'])) {

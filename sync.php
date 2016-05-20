@@ -117,7 +117,7 @@ function crudUser() {
                     array_push($GLOBALS['syncTab'], $valueFusion);
                     echo 'Ajouter user ';
                     echo $value1['mail'];
-                    //echo ' => ';
+                    echo ' - ';
                     fusionapi::addUser($value1['name'], $value1['familyname'], $value1['mail']);
                 }
                 echo "\n";
