@@ -36,7 +36,7 @@ class fusionapi {
 
         // creation de l'utilisateur
         $password = fusionapi::generate_password(pwd_length);
-        $result = $client->update($session_id, 'user', NULL, 'user', array(
+        $result = $client->formpost($session_id, 'user', NULL, 'user', array(
             'uid' => "$email",
             'givenName' => "$name",
             'sn' => "$familyname",
@@ -53,7 +53,7 @@ class fusionapi {
         $userDN = $client->ls($session_id, 'user', $attr, NULL, "uid=$email");
         $userDN = array_keys($userDN);
         // ajout de l'adresse email à l'utilisateur
-        $client->update($session_id, 'user', $userDN[0], 'mailAccount', array(
+        $client->formpost($session_id, 'user', $userDN[0], 'mailAccount', array(
             'mail' => "$mail",
         ));
 
@@ -79,7 +79,7 @@ class fusionapi {
         $userDN = $client->ls($session_id, 'user', $attr, NULL, "mail=$mail");
         $userDN = array_keys($userDN);
         //
-        $result = $client->update($session_id, 'user', $userDN[0], 'user', array(
+        $result = $client->formpost($session_id, 'user', $userDN[0], 'user', array(
             'givenName' => "$name",
             'sn' => "$familyname",
         ));
