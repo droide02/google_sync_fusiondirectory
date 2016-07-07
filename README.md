@@ -2,6 +2,17 @@
 
 Le plugin sert à syncrhoniser les comptes utilisateurs entre Google Apps et FusionDirectory.
 
+# Fonctionnement
+
+Le plugin récupère la liste des utilisateurs présents sur votre compte Google Apps (noms, prénoms, emails).
+Il vérifie via les adresses email (considérée comme identifiant unique) s'ils sont présents.
+
+Dans le cas où l'email existe, le nom et le prénom sont comparés et modifiés si besoin.
+
+Dans le cas où l'email n'existe pas, l'utilisateur est créé avec avec les onglets Samba,Unix et Mail.
+Les onglets Samba sont uniquement ajoutés si un nom de domaine Samba est indiqué dans le fichier de configuration config.php.
+
+
 # Versions
 
 v1 : Google Apps est utilisé en tant que source maitre et importe les utilisateurs (Email, Nom, Prénom) dans FusionDirectory. En cas d'email déjà existant, les noms et prénoms seront modifié par la valeur présente dans Google Apps.

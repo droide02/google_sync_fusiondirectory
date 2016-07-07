@@ -7,6 +7,10 @@ define('ca_file', '/etc/ssl/certs/fd.pem');
 define('login', 'fd-admin');
 define('password', 'P@ssw0rd');
 
+// domaine Samba de Fusion Directory => Systèmes -> Domaines Samba
+// si le champ est vide, les 'tab' Samba ne seront pas créés.
+define('sambadomain', '');
+
 // DN of an existing user we can display and modify */
 define('userdn', 'uid=fd-admin,ou=people,dc=societe,dc=com');
 

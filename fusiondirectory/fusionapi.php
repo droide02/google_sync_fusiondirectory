@@ -32,30 +32,56 @@ class fusionapi {
         // convertion de l'adresse email en nom d'utilisateur
         $email = explode('@', $mail);
         // supprimer les . du nom d'utilisateur => incompatible avec le champ 'uid'
-        $email = str_replace('.', '', $email[0]);
+        $username = str_replace('.', '', $email[0]);
 
         // creation de l'utilisateur
         $password = fusionapi::generate_password(pwd_length);
         $result = $client->formpost($session_id, 'user', NULL, 'user', array(
-            'uid' => "$email",
+            'uid' => "$username",
             'givenName' => "$name",
             'sn' => "$familyname",
             'userPassword_password' => $password,
             'userPassword_password2' => $password,
             'userPassword_pwstorage' => 'ssha',
         ));
-        
-        echo $email . ' - ' . $password;
+
+        echo $username . ' - ' . $password;
         // récupération du DN de l'utilisateur créé
         $attr = array(
             'uid' => 1,
         );
-        $userDN = $client->ls($session_id, 'user', $attr, NULL, "uid=$email");
+        $result = $userDN = $client->ls($session_id, 'user', $attr, NULL, "uid=$username");
+
         $userDN = array_keys($userDN);
         // ajout de l'adresse email à l'utilisateur
-        $client->formpost($session_id, 'user', $userDN[0], 'mailAccount', array(
+        $result = $client->formpost($session_id, 'user', $userDN[0], 'mailAccount', array(
             'mail' => "$mail",
         ));
+
+        // ajout du compte UNIX à l'utilisateur
+        $result = $client->formpost($session_id, 'user', $userDN[0], 'posixAccount', array(
+            'homeDirectory' => "/home/$username",
+            'loginShell' => '/bin/ash',
+        ));
+
+        // si le domaine Samba est indiqué
+        $smbDomain = sambadomain;
+        if (isset($smbDomain) && ($smbDomain != '')) {
+            // ajout de l'onglet Samba à l'utilisateur
+            $result = $client->formpost($session_id, 'user', $userDN[0], 'sambaAccount', array(
+            ));
+
+            // récupération du CN du group de l'utilisateur
+            $attrGroup = array(
+                'cn' => 1,
+            );
+            $groupDN = $client->ls($session_id, 'group', $attrGroup, NULL, "cn=$username");
+            $groupDN = array_keys($groupDN);
+            // ajout de l'onglet Samba au groupe de l'utilisateur
+            $result = $client->formpost($session_id, 'group', $groupDN[0], 'sambaGroup', array(
+                'sambaDomainName' => sambadomain,
+            ));
+        }
 
         if (isset($result['errors'])) {
             foreach ($result['errors'] as $error) {
@@ -83,6 +109,7 @@ class fusionapi {
             'givenName' => "$name",
             'sn' => "$familyname",
         ));
+
         if (isset($result['errors'])) {
             foreach ($result['errors'] as $error) {
                 print "Error: $error\n";
