@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,15 +17,57 @@
 
 class Google_Service_Container_UpdateClusterRequest extends Google_Model
 {
+  public $clusterId;
+  public $name;
+  public $projectId;
   protected $updateType = 'Google_Service_Container_ClusterUpdate';
   protected $updateDataType = '';
+  public $zone;
 
+  public function setClusterId($clusterId)
+  {
+    $this->clusterId = $clusterId;
+  }
+  public function getClusterId()
+  {
+    return $this->clusterId;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
+  }
+  public function setProjectId($projectId)
+  {
+    $this->projectId = $projectId;
+  }
+  public function getProjectId()
+  {
+    return $this->projectId;
+  }
+  /**
+   * @param Google_Service_Container_ClusterUpdate
+   */
   public function setUpdate(Google_Service_Container_ClusterUpdate $update)
   {
     $this->update = $update;
   }
+  /**
+   * @return Google_Service_Container_ClusterUpdate
+   */
   public function getUpdate()
   {
     return $this->update;
+  }
+  public function setZone($zone)
+  {
+    $this->zone = $zone;
+  }
+  public function getZone()
+  {
+    return $this->zone;
   }
 }

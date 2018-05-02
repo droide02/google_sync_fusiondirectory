@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -32,7 +32,6 @@ class Google_Service_Games_Resource_Leaderboards extends Google_Service_Resource
    * @param string $leaderboardId The ID of the leaderboard.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string consistencyToken The last-seen mutation timestamp.
    * @opt_param string language The preferred language to use for strings returned
    * by this method.
    * @return Google_Service_Games_Leaderboard
@@ -49,7 +48,6 @@ class Google_Service_Games_Resource_Leaderboards extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string consistencyToken The last-seen mutation timestamp.
    * @opt_param string language The preferred language to use for strings returned
    * by this method.
    * @opt_param int maxResults The maximum number of leaderboards to return in the

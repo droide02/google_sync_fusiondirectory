@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,6 +18,7 @@
 class Google_Service_YouTube_SponsorSnippet extends Google_Model
 {
   public $channelId;
+  public $cumulativeDurationMonths;
   protected $sponsorDetailsType = 'Google_Service_YouTube_ChannelProfileDetails';
   protected $sponsorDetailsDataType = '';
   public $sponsorSince;
@@ -30,10 +31,24 @@ class Google_Service_YouTube_SponsorSnippet extends Google_Model
   {
     return $this->channelId;
   }
+  public function setCumulativeDurationMonths($cumulativeDurationMonths)
+  {
+    $this->cumulativeDurationMonths = $cumulativeDurationMonths;
+  }
+  public function getCumulativeDurationMonths()
+  {
+    return $this->cumulativeDurationMonths;
+  }
+  /**
+   * @param Google_Service_YouTube_ChannelProfileDetails
+   */
   public function setSponsorDetails(Google_Service_YouTube_ChannelProfileDetails $sponsorDetails)
   {
     $this->sponsorDetails = $sponsorDetails;
   }
+  /**
+   * @return Google_Service_YouTube_ChannelProfileDetails
+   */
   public function getSponsorDetails()
   {
     return $this->sponsorDetails;

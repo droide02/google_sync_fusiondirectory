@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -40,13 +40,18 @@ class Google_Service_Pagespeedonline_Resource_Pagespeedapi extends Google_Servic
    * are run
    * @opt_param bool screenshot Indicates if binary data containing a screenshot
    * should be included
-   * @opt_param string strategy The analysis strategy to use
-   * @return Google_Service_Pagespeedonline_Result
+   * @opt_param bool snapshots Indicates if binary data containing snapshot images
+   * should be included
+   * @opt_param string strategy The analysis strategy (desktop or mobile) to use,
+   * and desktop is the default
+   * @opt_param string utm_campaign Campaign name for analytics.
+   * @opt_param string utm_source Campaign source for analytics.
+   * @return Google_Service_Pagespeedonline_PagespeedApiPagespeedResponseV4
    */
   public function runpagespeed($url, $optParams = array())
   {
     $params = array('url' => $url);
     $params = array_merge($params, $optParams);
-    return $this->call('runpagespeed', array($params), "Google_Service_Pagespeedonline_Result");
+    return $this->call('runpagespeed', array($params), "Google_Service_Pagespeedonline_PagespeedApiPagespeedResponseV4");
   }
 }

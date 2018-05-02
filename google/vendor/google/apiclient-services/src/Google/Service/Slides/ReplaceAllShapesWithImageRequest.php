@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,20 +15,37 @@
  * the License.
  */
 
-class Google_Service_Slides_ReplaceAllShapesWithImageRequest extends Google_Model
+class Google_Service_Slides_ReplaceAllShapesWithImageRequest extends Google_Collection
 {
+  protected $collection_key = 'pageObjectIds';
   protected $containsTextType = 'Google_Service_Slides_SubstringMatchCriteria';
   protected $containsTextDataType = '';
+  public $imageReplaceMethod;
   public $imageUrl;
+  public $pageObjectIds;
   public $replaceMethod;
 
+  /**
+   * @param Google_Service_Slides_SubstringMatchCriteria
+   */
   public function setContainsText(Google_Service_Slides_SubstringMatchCriteria $containsText)
   {
     $this->containsText = $containsText;
   }
+  /**
+   * @return Google_Service_Slides_SubstringMatchCriteria
+   */
   public function getContainsText()
   {
     return $this->containsText;
+  }
+  public function setImageReplaceMethod($imageReplaceMethod)
+  {
+    $this->imageReplaceMethod = $imageReplaceMethod;
+  }
+  public function getImageReplaceMethod()
+  {
+    return $this->imageReplaceMethod;
   }
   public function setImageUrl($imageUrl)
   {
@@ -37,6 +54,14 @@ class Google_Service_Slides_ReplaceAllShapesWithImageRequest extends Google_Mode
   public function getImageUrl()
   {
     return $this->imageUrl;
+  }
+  public function setPageObjectIds($pageObjectIds)
+  {
+    $this->pageObjectIds = $pageObjectIds;
+  }
+  public function getPageObjectIds()
+  {
+    return $this->pageObjectIds;
   }
   public function setReplaceMethod($replaceMethod)
   {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -44,7 +44,6 @@ class Google_Service_AndroidPublisher extends Google_Service
   public $edits_listings;
   public $edits_testers;
   public $edits_tracks;
-  public $entitlements;
   public $inappproducts;
   public $purchases_products;
   public $purchases_subscriptions;
@@ -939,53 +938,13 @@ class Google_Service_AndroidPublisher extends Google_Service
           )
         )
     );
-    $this->entitlements = new Google_Service_AndroidPublisher_Resource_Entitlements(
-        $this,
-        $this->serviceName,
-        'entitlements',
-        array(
-          'methods' => array(
-            'list' => array(
-              'path' => '{packageName}/entitlements',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'packageName' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'productId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'startIndex' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'token' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
     $this->inappproducts = new Google_Service_AndroidPublisher_Resource_Inappproducts(
         $this,
         $this->serviceName,
         'inappproducts',
         array(
           'methods' => array(
-            'batch' => array(
-              'path' => 'inappproducts/batch',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'delete' => array(
+            'delete' => array(
               'path' => '{packageName}/inappproducts/{sku}',
               'httpMethod' => 'DELETE',
               'parameters' => array(

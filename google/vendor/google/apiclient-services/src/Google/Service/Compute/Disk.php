@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -22,10 +22,15 @@ class Google_Service_Compute_Disk extends Google_Collection
   public $description;
   protected $diskEncryptionKeyType = 'Google_Service_Compute_CustomerEncryptionKey';
   protected $diskEncryptionKeyDataType = '';
+  protected $guestOsFeaturesType = 'Google_Service_Compute_GuestOsFeature';
+  protected $guestOsFeaturesDataType = 'array';
   public $id;
   public $kind;
+  public $labelFingerprint;
+  public $labels;
   public $lastAttachTimestamp;
   public $lastDetachTimestamp;
+  public $licenseCodes;
   public $licenses;
   public $name;
   public $options;
@@ -60,13 +65,33 @@ class Google_Service_Compute_Disk extends Google_Collection
   {
     return $this->description;
   }
+  /**
+   * @param Google_Service_Compute_CustomerEncryptionKey
+   */
   public function setDiskEncryptionKey(Google_Service_Compute_CustomerEncryptionKey $diskEncryptionKey)
   {
     $this->diskEncryptionKey = $diskEncryptionKey;
   }
+  /**
+   * @return Google_Service_Compute_CustomerEncryptionKey
+   */
   public function getDiskEncryptionKey()
   {
     return $this->diskEncryptionKey;
+  }
+  /**
+   * @param Google_Service_Compute_GuestOsFeature
+   */
+  public function setGuestOsFeatures($guestOsFeatures)
+  {
+    $this->guestOsFeatures = $guestOsFeatures;
+  }
+  /**
+   * @return Google_Service_Compute_GuestOsFeature
+   */
+  public function getGuestOsFeatures()
+  {
+    return $this->guestOsFeatures;
   }
   public function setId($id)
   {
@@ -84,6 +109,22 @@ class Google_Service_Compute_Disk extends Google_Collection
   {
     return $this->kind;
   }
+  public function setLabelFingerprint($labelFingerprint)
+  {
+    $this->labelFingerprint = $labelFingerprint;
+  }
+  public function getLabelFingerprint()
+  {
+    return $this->labelFingerprint;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
+  }
   public function setLastAttachTimestamp($lastAttachTimestamp)
   {
     $this->lastAttachTimestamp = $lastAttachTimestamp;
@@ -99,6 +140,14 @@ class Google_Service_Compute_Disk extends Google_Collection
   public function getLastDetachTimestamp()
   {
     return $this->lastDetachTimestamp;
+  }
+  public function setLicenseCodes($licenseCodes)
+  {
+    $this->licenseCodes = $licenseCodes;
+  }
+  public function getLicenseCodes()
+  {
+    return $this->licenseCodes;
   }
   public function setLicenses($licenses)
   {
@@ -148,10 +197,16 @@ class Google_Service_Compute_Disk extends Google_Collection
   {
     return $this->sourceImage;
   }
+  /**
+   * @param Google_Service_Compute_CustomerEncryptionKey
+   */
   public function setSourceImageEncryptionKey(Google_Service_Compute_CustomerEncryptionKey $sourceImageEncryptionKey)
   {
     $this->sourceImageEncryptionKey = $sourceImageEncryptionKey;
   }
+  /**
+   * @return Google_Service_Compute_CustomerEncryptionKey
+   */
   public function getSourceImageEncryptionKey()
   {
     return $this->sourceImageEncryptionKey;
@@ -172,10 +227,16 @@ class Google_Service_Compute_Disk extends Google_Collection
   {
     return $this->sourceSnapshot;
   }
+  /**
+   * @param Google_Service_Compute_CustomerEncryptionKey
+   */
   public function setSourceSnapshotEncryptionKey(Google_Service_Compute_CustomerEncryptionKey $sourceSnapshotEncryptionKey)
   {
     $this->sourceSnapshotEncryptionKey = $sourceSnapshotEncryptionKey;
   }
+  /**
+   * @return Google_Service_Compute_CustomerEncryptionKey
+   */
   public function getSourceSnapshotEncryptionKey()
   {
     return $this->sourceSnapshotEncryptionKey;

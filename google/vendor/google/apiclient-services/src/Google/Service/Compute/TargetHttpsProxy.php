@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -25,6 +25,7 @@ class Google_Service_Compute_TargetHttpsProxy extends Google_Collection
   public $name;
   public $selfLink;
   public $sslCertificates;
+  public $sslPolicy;
   public $urlMap;
 
   public function setCreationTimestamp($creationTimestamp)
@@ -82,6 +83,14 @@ class Google_Service_Compute_TargetHttpsProxy extends Google_Collection
   public function getSslCertificates()
   {
     return $this->sslCertificates;
+  }
+  public function setSslPolicy($sslPolicy)
+  {
+    $this->sslPolicy = $sslPolicy;
+  }
+  public function getSslPolicy()
+  {
+    return $this->sslPolicy;
   }
   public function setUrlMap($urlMap)
   {

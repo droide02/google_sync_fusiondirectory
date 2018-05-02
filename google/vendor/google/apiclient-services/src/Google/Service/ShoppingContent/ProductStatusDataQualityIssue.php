@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,6 +17,7 @@
 
 class Google_Service_ShoppingContent_ProductStatusDataQualityIssue extends Google_Model
 {
+  public $destination;
   public $detail;
   public $fetchStatus;
   public $id;
@@ -26,6 +27,14 @@ class Google_Service_ShoppingContent_ProductStatusDataQualityIssue extends Googl
   public $valueOnLandingPage;
   public $valueProvided;
 
+  public function setDestination($destination)
+  {
+    $this->destination = $destination;
+  }
+  public function getDestination()
+  {
+    return $this->destination;
+  }
   public function setDetail($detail)
   {
     $this->detail = $detail;

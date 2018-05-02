@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -27,10 +27,6 @@ class Google_Service_Genomics_Resource_Reads extends Google_Service_Resource
 {
   /**
    * Gets a list of reads for one or more read group sets.
-   *
-   * For the definitions of read group sets and other genomics resources, see
-   * [Fundamentals of Google Genomics](https://cloud.google.com/genomics
-   * /fundamentals-of-google-genomics)
    *
    * Reads search operates over a genomic coordinate space of reference sequence &
    * position defined over the reference sequences to which the requested read

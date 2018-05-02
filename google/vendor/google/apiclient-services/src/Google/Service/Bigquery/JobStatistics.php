@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,6 +17,7 @@
 
 class Google_Service_Bigquery_JobStatistics extends Google_Model
 {
+  public $completionRatio;
   public $creationTime;
   public $endTime;
   protected $extractType = 'Google_Service_Bigquery_JobStatistics4';
@@ -28,6 +29,14 @@ class Google_Service_Bigquery_JobStatistics extends Google_Model
   public $startTime;
   public $totalBytesProcessed;
 
+  public function setCompletionRatio($completionRatio)
+  {
+    $this->completionRatio = $completionRatio;
+  }
+  public function getCompletionRatio()
+  {
+    return $this->completionRatio;
+  }
   public function setCreationTime($creationTime)
   {
     $this->creationTime = $creationTime;
@@ -44,26 +53,44 @@ class Google_Service_Bigquery_JobStatistics extends Google_Model
   {
     return $this->endTime;
   }
+  /**
+   * @param Google_Service_Bigquery_JobStatistics4
+   */
   public function setExtract(Google_Service_Bigquery_JobStatistics4 $extract)
   {
     $this->extract = $extract;
   }
+  /**
+   * @return Google_Service_Bigquery_JobStatistics4
+   */
   public function getExtract()
   {
     return $this->extract;
   }
+  /**
+   * @param Google_Service_Bigquery_JobStatistics3
+   */
   public function setLoad(Google_Service_Bigquery_JobStatistics3 $load)
   {
     $this->load = $load;
   }
+  /**
+   * @return Google_Service_Bigquery_JobStatistics3
+   */
   public function getLoad()
   {
     return $this->load;
   }
+  /**
+   * @param Google_Service_Bigquery_JobStatistics2
+   */
   public function setQuery(Google_Service_Bigquery_JobStatistics2 $query)
   {
     $this->query = $query;
   }
+  /**
+   * @return Google_Service_Bigquery_JobStatistics2
+   */
   public function getQuery()
   {
     return $this->query;

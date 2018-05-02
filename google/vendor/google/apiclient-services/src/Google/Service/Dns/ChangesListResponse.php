@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -20,16 +20,38 @@ class Google_Service_Dns_ChangesListResponse extends Google_Collection
   protected $collection_key = 'changes';
   protected $changesType = 'Google_Service_Dns_Change';
   protected $changesDataType = 'array';
+  protected $headerType = 'Google_Service_Dns_ResponseHeader';
+  protected $headerDataType = '';
   public $kind;
   public $nextPageToken;
 
+  /**
+   * @param Google_Service_Dns_Change
+   */
   public function setChanges($changes)
   {
     $this->changes = $changes;
   }
+  /**
+   * @return Google_Service_Dns_Change
+   */
   public function getChanges()
   {
     return $this->changes;
+  }
+  /**
+   * @param Google_Service_Dns_ResponseHeader
+   */
+  public function setHeader(Google_Service_Dns_ResponseHeader $header)
+  {
+    $this->header = $header;
+  }
+  /**
+   * @return Google_Service_Dns_ResponseHeader
+   */
+  public function getHeader()
+  {
+    return $this->header;
   }
   public function setKind($kind)
   {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -21,24 +21,68 @@ class Google_Service_AdExchangeBuyer_TargetingValue extends Google_Model
   protected $creativeSizeValueDataType = '';
   protected $dayPartTargetingValueType = 'Google_Service_AdExchangeBuyer_TargetingValueDayPartTargeting';
   protected $dayPartTargetingValueDataType = '';
+  protected $demogAgeCriteriaValueType = 'Google_Service_AdExchangeBuyer_TargetingValueDemogAgeCriteria';
+  protected $demogAgeCriteriaValueDataType = '';
+  protected $demogGenderCriteriaValueType = 'Google_Service_AdExchangeBuyer_TargetingValueDemogGenderCriteria';
+  protected $demogGenderCriteriaValueDataType = '';
   public $longValue;
   public $stringValue;
 
+  /**
+   * @param Google_Service_AdExchangeBuyer_TargetingValueCreativeSize
+   */
   public function setCreativeSizeValue(Google_Service_AdExchangeBuyer_TargetingValueCreativeSize $creativeSizeValue)
   {
     $this->creativeSizeValue = $creativeSizeValue;
   }
+  /**
+   * @return Google_Service_AdExchangeBuyer_TargetingValueCreativeSize
+   */
   public function getCreativeSizeValue()
   {
     return $this->creativeSizeValue;
   }
+  /**
+   * @param Google_Service_AdExchangeBuyer_TargetingValueDayPartTargeting
+   */
   public function setDayPartTargetingValue(Google_Service_AdExchangeBuyer_TargetingValueDayPartTargeting $dayPartTargetingValue)
   {
     $this->dayPartTargetingValue = $dayPartTargetingValue;
   }
+  /**
+   * @return Google_Service_AdExchangeBuyer_TargetingValueDayPartTargeting
+   */
   public function getDayPartTargetingValue()
   {
     return $this->dayPartTargetingValue;
+  }
+  /**
+   * @param Google_Service_AdExchangeBuyer_TargetingValueDemogAgeCriteria
+   */
+  public function setDemogAgeCriteriaValue(Google_Service_AdExchangeBuyer_TargetingValueDemogAgeCriteria $demogAgeCriteriaValue)
+  {
+    $this->demogAgeCriteriaValue = $demogAgeCriteriaValue;
+  }
+  /**
+   * @return Google_Service_AdExchangeBuyer_TargetingValueDemogAgeCriteria
+   */
+  public function getDemogAgeCriteriaValue()
+  {
+    return $this->demogAgeCriteriaValue;
+  }
+  /**
+   * @param Google_Service_AdExchangeBuyer_TargetingValueDemogGenderCriteria
+   */
+  public function setDemogGenderCriteriaValue(Google_Service_AdExchangeBuyer_TargetingValueDemogGenderCriteria $demogGenderCriteriaValue)
+  {
+    $this->demogGenderCriteriaValue = $demogGenderCriteriaValue;
+  }
+  /**
+   * @return Google_Service_AdExchangeBuyer_TargetingValueDemogGenderCriteria
+   */
+  public function getDemogGenderCriteriaValue()
+  {
+    return $this->demogGenderCriteriaValue;
   }
   public function setLongValue($longValue)
   {

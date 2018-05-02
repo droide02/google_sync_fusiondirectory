@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -39,6 +39,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string userProject The project to be billed for this request.
+   * Required for Requester Pays buckets.
    */
   public function delete($bucket, $object, $entity, $optParams = array())
   {
@@ -60,6 +62,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string userProject The project to be billed for this request.
+   * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
    */
   public function get($bucket, $object, $entity, $optParams = array())
@@ -80,6 +84,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string userProject The project to be billed for this request.
+   * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
    */
   public function insert($bucket, $object, Google_Service_Storage_ObjectAccessControl $postBody, $optParams = array())
@@ -99,6 +105,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string userProject The project to be billed for this request.
+   * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControls
    */
   public function listObjectAccessControls($bucket, $object, $optParams = array())
@@ -108,8 +116,7 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
     return $this->call('list', array($params), "Google_Service_Storage_ObjectAccessControls");
   }
   /**
-   * Updates an ACL entry on the specified object. This method supports patch
-   * semantics. (objectAccessControls.patch)
+   * Patches an ACL entry on the specified object. (objectAccessControls.patch)
    *
    * @param string $bucket Name of a bucket.
    * @param string $object Name of the object. For information about how to URL
@@ -122,6 +129,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string userProject The project to be billed for this request.
+   * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
    */
   public function patch($bucket, $object, $entity, Google_Service_Storage_ObjectAccessControl $postBody, $optParams = array())
@@ -144,6 +153,8 @@ class Google_Service_Storage_Resource_ObjectAccessControls extends Google_Servic
    *
    * @opt_param string generation If present, selects a specific revision of this
    * object (as opposed to the latest version, the default).
+   * @opt_param string userProject The project to be billed for this request.
+   * Required for Requester Pays buckets.
    * @return Google_Service_Storage_ObjectAccessControl
    */
   public function update($bucket, $object, $entity, Google_Service_Storage_ObjectAccessControl $postBody, $optParams = array())

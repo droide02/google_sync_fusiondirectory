@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -24,6 +24,13 @@ class Google_Service_CloudBuild_BuildStep extends Google_Collection
   public $env;
   public $id;
   public $name;
+  public $secretEnv;
+  public $status;
+  public $timeout;
+  protected $timingType = 'Google_Service_CloudBuild_TimeSpan';
+  protected $timingDataType = '';
+  protected $volumesType = 'Google_Service_CloudBuild_Volume';
+  protected $volumesDataType = 'array';
   public $waitFor;
 
   public function setArgs($args)
@@ -73,6 +80,58 @@ class Google_Service_CloudBuild_BuildStep extends Google_Collection
   public function getName()
   {
     return $this->name;
+  }
+  public function setSecretEnv($secretEnv)
+  {
+    $this->secretEnv = $secretEnv;
+  }
+  public function getSecretEnv()
+  {
+    return $this->secretEnv;
+  }
+  public function setStatus($status)
+  {
+    $this->status = $status;
+  }
+  public function getStatus()
+  {
+    return $this->status;
+  }
+  public function setTimeout($timeout)
+  {
+    $this->timeout = $timeout;
+  }
+  public function getTimeout()
+  {
+    return $this->timeout;
+  }
+  /**
+   * @param Google_Service_CloudBuild_TimeSpan
+   */
+  public function setTiming(Google_Service_CloudBuild_TimeSpan $timing)
+  {
+    $this->timing = $timing;
+  }
+  /**
+   * @return Google_Service_CloudBuild_TimeSpan
+   */
+  public function getTiming()
+  {
+    return $this->timing;
+  }
+  /**
+   * @param Google_Service_CloudBuild_Volume
+   */
+  public function setVolumes($volumes)
+  {
+    $this->volumes = $volumes;
+  }
+  /**
+   * @return Google_Service_CloudBuild_Volume
+   */
+  public function getVolumes()
+  {
+    return $this->volumes;
   }
   public function setWaitFor($waitFor)
   {

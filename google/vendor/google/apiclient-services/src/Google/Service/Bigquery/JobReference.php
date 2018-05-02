@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,6 +18,7 @@
 class Google_Service_Bigquery_JobReference extends Google_Model
 {
   public $jobId;
+  public $location;
   public $projectId;
 
   public function setJobId($jobId)
@@ -27,6 +28,14 @@ class Google_Service_Bigquery_JobReference extends Google_Model
   public function getJobId()
   {
     return $this->jobId;
+  }
+  public function setLocation($location)
+  {
+    $this->location = $location;
+  }
+  public function getLocation()
+  {
+    return $this->location;
   }
   public function setProjectId($projectId)
   {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,6 +18,7 @@
 class Google_Service_Cloudbilling_BillingAccount extends Google_Model
 {
   public $displayName;
+  public $masterBillingAccount;
   public $name;
   public $open;
 
@@ -28,6 +29,14 @@ class Google_Service_Cloudbilling_BillingAccount extends Google_Model
   public function getDisplayName()
   {
     return $this->displayName;
+  }
+  public function setMasterBillingAccount($masterBillingAccount)
+  {
+    $this->masterBillingAccount = $masterBillingAccount;
+  }
+  public function getMasterBillingAccount()
+  {
+    return $this->masterBillingAccount;
   }
   public function setName($name)
   {

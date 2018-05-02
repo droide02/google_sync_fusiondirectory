@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,7 +18,11 @@
 class Google_Service_ManufacturerCenter_Product extends Google_Collection
 {
   protected $collection_key = 'manuallyDeletedAttributes';
+  protected $attributesType = 'Google_Service_ManufacturerCenter_Attributes';
+  protected $attributesDataType = '';
   public $contentLanguage;
+  protected $destinationStatusesType = 'Google_Service_ManufacturerCenter_DestinationStatus';
+  protected $destinationStatusesDataType = 'array';
   protected $finalAttributesType = 'Google_Service_ManufacturerCenter_Attributes';
   protected $finalAttributesDataType = '';
   protected $issuesType = 'Google_Service_ManufacturerCenter_Issue';
@@ -33,6 +37,20 @@ class Google_Service_ManufacturerCenter_Product extends Google_Collection
   protected $uploadedAttributesType = 'Google_Service_ManufacturerCenter_Attributes';
   protected $uploadedAttributesDataType = '';
 
+  /**
+   * @param Google_Service_ManufacturerCenter_Attributes
+   */
+  public function setAttributes(Google_Service_ManufacturerCenter_Attributes $attributes)
+  {
+    $this->attributes = $attributes;
+  }
+  /**
+   * @return Google_Service_ManufacturerCenter_Attributes
+   */
+  public function getAttributes()
+  {
+    return $this->attributes;
+  }
   public function setContentLanguage($contentLanguage)
   {
     $this->contentLanguage = $contentLanguage;
@@ -41,18 +59,44 @@ class Google_Service_ManufacturerCenter_Product extends Google_Collection
   {
     return $this->contentLanguage;
   }
+  /**
+   * @param Google_Service_ManufacturerCenter_DestinationStatus
+   */
+  public function setDestinationStatuses($destinationStatuses)
+  {
+    $this->destinationStatuses = $destinationStatuses;
+  }
+  /**
+   * @return Google_Service_ManufacturerCenter_DestinationStatus
+   */
+  public function getDestinationStatuses()
+  {
+    return $this->destinationStatuses;
+  }
+  /**
+   * @param Google_Service_ManufacturerCenter_Attributes
+   */
   public function setFinalAttributes(Google_Service_ManufacturerCenter_Attributes $finalAttributes)
   {
     $this->finalAttributes = $finalAttributes;
   }
+  /**
+   * @return Google_Service_ManufacturerCenter_Attributes
+   */
   public function getFinalAttributes()
   {
     return $this->finalAttributes;
   }
+  /**
+   * @param Google_Service_ManufacturerCenter_Issue
+   */
   public function setIssues($issues)
   {
     $this->issues = $issues;
   }
+  /**
+   * @return Google_Service_ManufacturerCenter_Issue
+   */
   public function getIssues()
   {
     return $this->issues;
@@ -65,10 +109,16 @@ class Google_Service_ManufacturerCenter_Product extends Google_Collection
   {
     return $this->manuallyDeletedAttributes;
   }
+  /**
+   * @param Google_Service_ManufacturerCenter_Attributes
+   */
   public function setManuallyProvidedAttributes(Google_Service_ManufacturerCenter_Attributes $manuallyProvidedAttributes)
   {
     $this->manuallyProvidedAttributes = $manuallyProvidedAttributes;
   }
+  /**
+   * @return Google_Service_ManufacturerCenter_Attributes
+   */
   public function getManuallyProvidedAttributes()
   {
     return $this->manuallyProvidedAttributes;
@@ -105,10 +155,16 @@ class Google_Service_ManufacturerCenter_Product extends Google_Collection
   {
     return $this->targetCountry;
   }
+  /**
+   * @param Google_Service_ManufacturerCenter_Attributes
+   */
   public function setUploadedAttributes(Google_Service_ManufacturerCenter_Attributes $uploadedAttributes)
   {
     $this->uploadedAttributes = $uploadedAttributes;
   }
+  /**
+   * @return Google_Service_ManufacturerCenter_Attributes
+   */
   public function getUploadedAttributes()
   {
     return $this->uploadedAttributes;

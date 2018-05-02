@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,17 +15,22 @@
  * the License.
  */
 
-class Google_Service_Compute_Subnetwork extends Google_Model
+class Google_Service_Compute_Subnetwork extends Google_Collection
 {
+  protected $collection_key = 'secondaryIpRanges';
   public $creationTimestamp;
   public $description;
+  public $fingerprint;
   public $gatewayAddress;
   public $id;
   public $ipCidrRange;
   public $kind;
   public $name;
   public $network;
+  public $privateIpGoogleAccess;
   public $region;
+  protected $secondaryIpRangesType = 'Google_Service_Compute_SubnetworkSecondaryRange';
+  protected $secondaryIpRangesDataType = 'array';
   public $selfLink;
 
   public function setCreationTimestamp($creationTimestamp)
@@ -43,6 +48,14 @@ class Google_Service_Compute_Subnetwork extends Google_Model
   public function getDescription()
   {
     return $this->description;
+  }
+  public function setFingerprint($fingerprint)
+  {
+    $this->fingerprint = $fingerprint;
+  }
+  public function getFingerprint()
+  {
+    return $this->fingerprint;
   }
   public function setGatewayAddress($gatewayAddress)
   {
@@ -92,6 +105,14 @@ class Google_Service_Compute_Subnetwork extends Google_Model
   {
     return $this->network;
   }
+  public function setPrivateIpGoogleAccess($privateIpGoogleAccess)
+  {
+    $this->privateIpGoogleAccess = $privateIpGoogleAccess;
+  }
+  public function getPrivateIpGoogleAccess()
+  {
+    return $this->privateIpGoogleAccess;
+  }
   public function setRegion($region)
   {
     $this->region = $region;
@@ -99,6 +120,20 @@ class Google_Service_Compute_Subnetwork extends Google_Model
   public function getRegion()
   {
     return $this->region;
+  }
+  /**
+   * @param Google_Service_Compute_SubnetworkSecondaryRange
+   */
+  public function setSecondaryIpRanges($secondaryIpRanges)
+  {
+    $this->secondaryIpRanges = $secondaryIpRanges;
+  }
+  /**
+   * @return Google_Service_Compute_SubnetworkSecondaryRange
+   */
+  public function getSecondaryIpRanges()
+  {
+    return $this->secondaryIpRanges;
   }
   public function setSelfLink($selfLink)
   {

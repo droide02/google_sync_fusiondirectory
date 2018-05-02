@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -21,10 +21,14 @@ class Google_Service_Dataflow_WorkerMessage extends Google_Model
   public $time;
   protected $workerHealthReportType = 'Google_Service_Dataflow_WorkerHealthReport';
   protected $workerHealthReportDataType = '';
+  protected $workerLifecycleEventType = 'Google_Service_Dataflow_WorkerLifecycleEvent';
+  protected $workerLifecycleEventDataType = '';
   protected $workerMessageCodeType = 'Google_Service_Dataflow_WorkerMessageCode';
   protected $workerMessageCodeDataType = '';
   protected $workerMetricsType = 'Google_Service_Dataflow_ResourceUtilizationReport';
   protected $workerMetricsDataType = '';
+  protected $workerShutdownNoticeType = 'Google_Service_Dataflow_WorkerShutdownNotice';
+  protected $workerShutdownNoticeDataType = '';
 
   public function setLabels($labels)
   {
@@ -42,28 +46,74 @@ class Google_Service_Dataflow_WorkerMessage extends Google_Model
   {
     return $this->time;
   }
+  /**
+   * @param Google_Service_Dataflow_WorkerHealthReport
+   */
   public function setWorkerHealthReport(Google_Service_Dataflow_WorkerHealthReport $workerHealthReport)
   {
     $this->workerHealthReport = $workerHealthReport;
   }
+  /**
+   * @return Google_Service_Dataflow_WorkerHealthReport
+   */
   public function getWorkerHealthReport()
   {
     return $this->workerHealthReport;
   }
+  /**
+   * @param Google_Service_Dataflow_WorkerLifecycleEvent
+   */
+  public function setWorkerLifecycleEvent(Google_Service_Dataflow_WorkerLifecycleEvent $workerLifecycleEvent)
+  {
+    $this->workerLifecycleEvent = $workerLifecycleEvent;
+  }
+  /**
+   * @return Google_Service_Dataflow_WorkerLifecycleEvent
+   */
+  public function getWorkerLifecycleEvent()
+  {
+    return $this->workerLifecycleEvent;
+  }
+  /**
+   * @param Google_Service_Dataflow_WorkerMessageCode
+   */
   public function setWorkerMessageCode(Google_Service_Dataflow_WorkerMessageCode $workerMessageCode)
   {
     $this->workerMessageCode = $workerMessageCode;
   }
+  /**
+   * @return Google_Service_Dataflow_WorkerMessageCode
+   */
   public function getWorkerMessageCode()
   {
     return $this->workerMessageCode;
   }
+  /**
+   * @param Google_Service_Dataflow_ResourceUtilizationReport
+   */
   public function setWorkerMetrics(Google_Service_Dataflow_ResourceUtilizationReport $workerMetrics)
   {
     $this->workerMetrics = $workerMetrics;
   }
+  /**
+   * @return Google_Service_Dataflow_ResourceUtilizationReport
+   */
   public function getWorkerMetrics()
   {
     return $this->workerMetrics;
+  }
+  /**
+   * @param Google_Service_Dataflow_WorkerShutdownNotice
+   */
+  public function setWorkerShutdownNotice(Google_Service_Dataflow_WorkerShutdownNotice $workerShutdownNotice)
+  {
+    $this->workerShutdownNotice = $workerShutdownNotice;
+  }
+  /**
+   * @return Google_Service_Dataflow_WorkerShutdownNotice
+   */
+  public function getWorkerShutdownNotice()
+  {
+    return $this->workerShutdownNotice;
   }
 }

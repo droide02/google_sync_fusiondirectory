@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -21,8 +21,11 @@ class Google_Service_Dns_ManagedZone extends Google_Collection
   public $creationTime;
   public $description;
   public $dnsName;
+  protected $dnssecConfigType = 'Google_Service_Dns_ManagedZoneDnsSecConfig';
+  protected $dnssecConfigDataType = '';
   public $id;
   public $kind;
+  public $labels;
   public $name;
   public $nameServerSet;
   public $nameServers;
@@ -51,6 +54,20 @@ class Google_Service_Dns_ManagedZone extends Google_Collection
   {
     return $this->dnsName;
   }
+  /**
+   * @param Google_Service_Dns_ManagedZoneDnsSecConfig
+   */
+  public function setDnssecConfig(Google_Service_Dns_ManagedZoneDnsSecConfig $dnssecConfig)
+  {
+    $this->dnssecConfig = $dnssecConfig;
+  }
+  /**
+   * @return Google_Service_Dns_ManagedZoneDnsSecConfig
+   */
+  public function getDnssecConfig()
+  {
+    return $this->dnssecConfig;
+  }
   public function setId($id)
   {
     $this->id = $id;
@@ -66,6 +83,14 @@ class Google_Service_Dns_ManagedZone extends Google_Collection
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
   }
   public function setName($name)
   {

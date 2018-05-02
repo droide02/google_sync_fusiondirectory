@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -37,5 +37,18 @@ class Google_Service_Analytics_Resource_Provisioning extends Google_Service_Reso
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('createAccountTicket', array($params), "Google_Service_Analytics_AccountTicket");
+  }
+  /**
+   * Provision account. (provisioning.createAccountTree)
+   *
+   * @param Google_Service_Analytics_AccountTreeRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Analytics_AccountTreeResponse
+   */
+  public function createAccountTree(Google_Service_Analytics_AccountTreeRequest $postBody, $optParams = array())
+  {
+    $params = array('postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('createAccountTree', array($params), "Google_Service_Analytics_AccountTreeResponse");
   }
 }

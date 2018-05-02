@@ -25,6 +25,11 @@ TODO :
 
 # Installation
 
+
+- Créez votre token d'accès en vous rendant sur la page https://console.developers.google.com/apis/credentials
+- Dans la rubrique Identifiants, cliquer sur **Créer des identifiants** de type **ID client OAuth**.
+- Choisissez le type **Application web**, indiquez un nom et indiquez l'URI de redirection autorisée.
+- Téléchargez le fichier .json et le placer ici : google/client_secret.json
 - Faire un git clone du projet ou dézipper le projet sur une machine disposant de PHP. (L'installation sur le serveur Fusion Directory n'est pas obligatoire)
 - Modifier le fichier de configuration config.php avec l'adresse de FusionDirectory, le compte admin ainsi que le nombre de caractère pour la génération des mots de passe.
 - Lancer le script 

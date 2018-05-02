@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -19,7 +19,11 @@ class Google_Service_ManufacturerCenter_Issue extends Google_Model
 {
   public $attribute;
   public $description;
+  public $destination;
+  public $resolution;
   public $severity;
+  public $timestamp;
+  public $title;
   public $type;
 
   public function setAttribute($attribute)
@@ -38,6 +42,22 @@ class Google_Service_ManufacturerCenter_Issue extends Google_Model
   {
     return $this->description;
   }
+  public function setDestination($destination)
+  {
+    $this->destination = $destination;
+  }
+  public function getDestination()
+  {
+    return $this->destination;
+  }
+  public function setResolution($resolution)
+  {
+    $this->resolution = $resolution;
+  }
+  public function getResolution()
+  {
+    return $this->resolution;
+  }
   public function setSeverity($severity)
   {
     $this->severity = $severity;
@@ -45,6 +65,22 @@ class Google_Service_ManufacturerCenter_Issue extends Google_Model
   public function getSeverity()
   {
     return $this->severity;
+  }
+  public function setTimestamp($timestamp)
+  {
+    $this->timestamp = $timestamp;
+  }
+  public function getTimestamp()
+  {
+    return $this->timestamp;
+  }
+  public function setTitle($title)
+  {
+    $this->title = $title;
+  }
+  public function getTitle()
+  {
+    return $this->title;
   }
   public function setType($type)
   {

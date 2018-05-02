@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -19,6 +19,7 @@ class Google_Service_ShoppingContent_AccountStatusDataQualityIssue extends Googl
 {
   protected $collection_key = 'exampleItems';
   public $country;
+  public $destination;
   public $detail;
   public $displayedValue;
   protected $exampleItemsType = 'Google_Service_ShoppingContent_AccountStatusExampleItem';
@@ -38,6 +39,14 @@ class Google_Service_ShoppingContent_AccountStatusDataQualityIssue extends Googl
   {
     return $this->country;
   }
+  public function setDestination($destination)
+  {
+    $this->destination = $destination;
+  }
+  public function getDestination()
+  {
+    return $this->destination;
+  }
   public function setDetail($detail)
   {
     $this->detail = $detail;
@@ -54,10 +63,16 @@ class Google_Service_ShoppingContent_AccountStatusDataQualityIssue extends Googl
   {
     return $this->displayedValue;
   }
+  /**
+   * @param Google_Service_ShoppingContent_AccountStatusExampleItem
+   */
   public function setExampleItems($exampleItems)
   {
     $this->exampleItems = $exampleItems;
   }
+  /**
+   * @return Google_Service_ShoppingContent_AccountStatusExampleItem
+   */
   public function getExampleItems()
   {
     return $this->exampleItems;

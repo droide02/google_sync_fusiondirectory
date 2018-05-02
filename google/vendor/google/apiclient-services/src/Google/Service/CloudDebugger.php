@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -34,7 +34,7 @@ class Google_Service_CloudDebugger extends Google_Service
   /** View and manage your data across Google Cloud Platform services. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
-  /** Manage cloud debugger. */
+  /** Use Stackdriver Debugger. */
   const CLOUD_DEBUGGER =
       "https://www.googleapis.com/auth/cloud_debugger";
 
@@ -193,14 +193,6 @@ class Google_Service_CloudDebugger extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'stripResults' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'waitToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'clientVersion' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -209,13 +201,21 @@ class Google_Service_CloudDebugger extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
+                'includeInactive' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
                 'includeAllUsers' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'includeInactive' => array(
+                'stripResults' => array(
                   'location' => 'query',
                   'type' => 'boolean',
+                ),
+                'waitToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),'set' => array(

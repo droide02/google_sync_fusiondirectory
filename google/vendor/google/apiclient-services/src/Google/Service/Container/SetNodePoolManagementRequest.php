@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,15 +17,66 @@
 
 class Google_Service_Container_SetNodePoolManagementRequest extends Google_Model
 {
+  public $clusterId;
   protected $managementType = 'Google_Service_Container_NodeManagement';
   protected $managementDataType = '';
+  public $name;
+  public $nodePoolId;
+  public $projectId;
+  public $zone;
 
+  public function setClusterId($clusterId)
+  {
+    $this->clusterId = $clusterId;
+  }
+  public function getClusterId()
+  {
+    return $this->clusterId;
+  }
+  /**
+   * @param Google_Service_Container_NodeManagement
+   */
   public function setManagement(Google_Service_Container_NodeManagement $management)
   {
     $this->management = $management;
   }
+  /**
+   * @return Google_Service_Container_NodeManagement
+   */
   public function getManagement()
   {
     return $this->management;
+  }
+  public function setName($name)
+  {
+    $this->name = $name;
+  }
+  public function getName()
+  {
+    return $this->name;
+  }
+  public function setNodePoolId($nodePoolId)
+  {
+    $this->nodePoolId = $nodePoolId;
+  }
+  public function getNodePoolId()
+  {
+    return $this->nodePoolId;
+  }
+  public function setProjectId($projectId)
+  {
+    $this->projectId = $projectId;
+  }
+  public function getProjectId()
+  {
+    return $this->projectId;
+  }
+  public function setZone($zone)
+  {
+    $this->zone = $zone;
+  }
+  public function getZone()
+  {
+    return $this->zone;
   }
 }

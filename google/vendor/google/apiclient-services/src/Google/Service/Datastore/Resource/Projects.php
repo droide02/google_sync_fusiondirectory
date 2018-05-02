@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -73,6 +73,45 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
     return $this->call('commit', array($params), "Google_Service_Datastore_CommitResponse");
   }
   /**
+   * Exports a copy of all or a subset of entities from Google Cloud Datastore to
+   * another storage system, such as Google Cloud Storage. Recent updates to
+   * entities may not be reflected in the export. The export occurs in the
+   * background and its progress can be monitored and managed via the Operation
+   * resource that is created. The output of an export may only be used once the
+   * associated operation is done. If an export operation is cancelled before
+   * completion it may leave partial data behind in Google Cloud Storage.
+   * (projects.export)
+   *
+   * @param string $projectId Project ID against which to make the request.
+   * @param Google_Service_Datastore_GoogleDatastoreAdminV1ExportEntitiesRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Datastore_GoogleLongrunningOperation
+   */
+  public function export($projectId, Google_Service_Datastore_GoogleDatastoreAdminV1ExportEntitiesRequest $postBody, $optParams = array())
+  {
+    $params = array('projectId' => $projectId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('export', array($params), "Google_Service_Datastore_GoogleLongrunningOperation");
+  }
+  /**
+   * Imports entities into Google Cloud Datastore. Existing entities with the same
+   * key are overwritten. The import occurs in the background and its progress can
+   * be monitored and managed via the Operation resource that is created. If an
+   * ImportEntities operation is cancelled, it is possible that a subset of the
+   * data has already been imported to Cloud Datastore. (projects.import)
+   *
+   * @param string $projectId Project ID against which to make the request.
+   * @param Google_Service_Datastore_GoogleDatastoreAdminV1ImportEntitiesRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Datastore_GoogleLongrunningOperation
+   */
+  public function import($projectId, Google_Service_Datastore_GoogleDatastoreAdminV1ImportEntitiesRequest $postBody, $optParams = array())
+  {
+    $params = array('projectId' => $projectId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('import', array($params), "Google_Service_Datastore_GoogleLongrunningOperation");
+  }
+  /**
    * Looks up entities by key. (projects.lookup)
    *
    * @param string $projectId The ID of the project against which to make the
@@ -86,6 +125,22 @@ class Google_Service_Datastore_Resource_Projects extends Google_Service_Resource
     $params = array('projectId' => $projectId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('lookup', array($params), "Google_Service_Datastore_LookupResponse");
+  }
+  /**
+   * Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.
+   * (projects.reserveIds)
+   *
+   * @param string $projectId The ID of the project against which to make the
+   * request.
+   * @param Google_Service_Datastore_ReserveIdsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Datastore_ReserveIdsResponse
+   */
+  public function reserveIds($projectId, Google_Service_Datastore_ReserveIdsRequest $postBody, $optParams = array())
+  {
+    $params = array('projectId' => $projectId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('reserveIds', array($params), "Google_Service_Datastore_ReserveIdsResponse");
   }
   /**
    * Rolls back a transaction. (projects.rollback)

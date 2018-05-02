@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,11 +18,27 @@
 class Google_Service_Dns_ManagedZonesListResponse extends Google_Collection
 {
   protected $collection_key = 'managedZones';
+  protected $headerType = 'Google_Service_Dns_ResponseHeader';
+  protected $headerDataType = '';
   public $kind;
   protected $managedZonesType = 'Google_Service_Dns_ManagedZone';
   protected $managedZonesDataType = 'array';
   public $nextPageToken;
 
+  /**
+   * @param Google_Service_Dns_ResponseHeader
+   */
+  public function setHeader(Google_Service_Dns_ResponseHeader $header)
+  {
+    $this->header = $header;
+  }
+  /**
+   * @return Google_Service_Dns_ResponseHeader
+   */
+  public function getHeader()
+  {
+    return $this->header;
+  }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -31,10 +47,16 @@ class Google_Service_Dns_ManagedZonesListResponse extends Google_Collection
   {
     return $this->kind;
   }
+  /**
+   * @param Google_Service_Dns_ManagedZone
+   */
   public function setManagedZones($managedZones)
   {
     $this->managedZones = $managedZones;
   }
+  /**
+   * @return Google_Service_Dns_ManagedZone
+   */
   public function getManagedZones()
   {
     return $this->managedZones;

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,16 +17,20 @@
 
 class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
 {
-  protected $collection_key = 'destinationStatuses';
+  protected $collection_key = 'itemLevelIssues';
   public $creationDate;
   protected $dataQualityIssuesType = 'Google_Service_ShoppingContent_ProductStatusDataQualityIssue';
   protected $dataQualityIssuesDataType = 'array';
   protected $destinationStatusesType = 'Google_Service_ShoppingContent_ProductStatusDestinationStatus';
   protected $destinationStatusesDataType = 'array';
   public $googleExpirationDate;
+  protected $itemLevelIssuesType = 'Google_Service_ShoppingContent_ProductStatusItemLevelIssue';
+  protected $itemLevelIssuesDataType = 'array';
   public $kind;
   public $lastUpdateDate;
   public $link;
+  protected $productType = 'Google_Service_ShoppingContent_Product';
+  protected $productDataType = '';
   public $productId;
   public $title;
 
@@ -38,18 +42,30 @@ class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
   {
     return $this->creationDate;
   }
+  /**
+   * @param Google_Service_ShoppingContent_ProductStatusDataQualityIssue
+   */
   public function setDataQualityIssues($dataQualityIssues)
   {
     $this->dataQualityIssues = $dataQualityIssues;
   }
+  /**
+   * @return Google_Service_ShoppingContent_ProductStatusDataQualityIssue
+   */
   public function getDataQualityIssues()
   {
     return $this->dataQualityIssues;
   }
+  /**
+   * @param Google_Service_ShoppingContent_ProductStatusDestinationStatus
+   */
   public function setDestinationStatuses($destinationStatuses)
   {
     $this->destinationStatuses = $destinationStatuses;
   }
+  /**
+   * @return Google_Service_ShoppingContent_ProductStatusDestinationStatus
+   */
   public function getDestinationStatuses()
   {
     return $this->destinationStatuses;
@@ -61,6 +77,20 @@ class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
   public function getGoogleExpirationDate()
   {
     return $this->googleExpirationDate;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_ProductStatusItemLevelIssue
+   */
+  public function setItemLevelIssues($itemLevelIssues)
+  {
+    $this->itemLevelIssues = $itemLevelIssues;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_ProductStatusItemLevelIssue
+   */
+  public function getItemLevelIssues()
+  {
+    return $this->itemLevelIssues;
   }
   public function setKind($kind)
   {
@@ -85,6 +115,20 @@ class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
   public function getLink()
   {
     return $this->link;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_Product
+   */
+  public function setProduct(Google_Service_ShoppingContent_Product $product)
+  {
+    $this->product = $product;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_Product
+   */
+  public function getProduct()
+  {
+    return $this->product;
   }
   public function setProductId($productId)
   {

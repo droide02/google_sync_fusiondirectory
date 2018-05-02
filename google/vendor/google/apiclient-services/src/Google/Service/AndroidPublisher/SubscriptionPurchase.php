@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -21,11 +21,19 @@ class Google_Service_AndroidPublisher_SubscriptionPurchase extends Google_Model
   public $cancelReason;
   public $countryCode;
   public $developerPayload;
+  public $emailAddress;
   public $expiryTimeMillis;
+  public $familyName;
+  public $givenName;
   public $kind;
+  public $linkedPurchaseToken;
+  public $orderId;
   public $paymentState;
   public $priceAmountMicros;
   public $priceCurrencyCode;
+  public $profileId;
+  public $profileName;
+  public $purchaseType;
   public $startTimeMillis;
   public $userCancellationTimeMillis;
 
@@ -61,6 +69,14 @@ class Google_Service_AndroidPublisher_SubscriptionPurchase extends Google_Model
   {
     return $this->developerPayload;
   }
+  public function setEmailAddress($emailAddress)
+  {
+    $this->emailAddress = $emailAddress;
+  }
+  public function getEmailAddress()
+  {
+    return $this->emailAddress;
+  }
   public function setExpiryTimeMillis($expiryTimeMillis)
   {
     $this->expiryTimeMillis = $expiryTimeMillis;
@@ -69,6 +85,22 @@ class Google_Service_AndroidPublisher_SubscriptionPurchase extends Google_Model
   {
     return $this->expiryTimeMillis;
   }
+  public function setFamilyName($familyName)
+  {
+    $this->familyName = $familyName;
+  }
+  public function getFamilyName()
+  {
+    return $this->familyName;
+  }
+  public function setGivenName($givenName)
+  {
+    $this->givenName = $givenName;
+  }
+  public function getGivenName()
+  {
+    return $this->givenName;
+  }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -76,6 +108,22 @@ class Google_Service_AndroidPublisher_SubscriptionPurchase extends Google_Model
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setLinkedPurchaseToken($linkedPurchaseToken)
+  {
+    $this->linkedPurchaseToken = $linkedPurchaseToken;
+  }
+  public function getLinkedPurchaseToken()
+  {
+    return $this->linkedPurchaseToken;
+  }
+  public function setOrderId($orderId)
+  {
+    $this->orderId = $orderId;
+  }
+  public function getOrderId()
+  {
+    return $this->orderId;
   }
   public function setPaymentState($paymentState)
   {
@@ -100,6 +148,30 @@ class Google_Service_AndroidPublisher_SubscriptionPurchase extends Google_Model
   public function getPriceCurrencyCode()
   {
     return $this->priceCurrencyCode;
+  }
+  public function setProfileId($profileId)
+  {
+    $this->profileId = $profileId;
+  }
+  public function getProfileId()
+  {
+    return $this->profileId;
+  }
+  public function setProfileName($profileName)
+  {
+    $this->profileName = $profileName;
+  }
+  public function getProfileName()
+  {
+    return $this->profileName;
+  }
+  public function setPurchaseType($purchaseType)
+  {
+    $this->purchaseType = $purchaseType;
+  }
+  public function getPurchaseType()
+  {
+    return $this->purchaseType;
   }
   public function setStartTimeMillis($startTimeMillis)
   {

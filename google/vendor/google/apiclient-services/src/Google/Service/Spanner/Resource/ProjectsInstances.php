@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -139,16 +139,17 @@ class Google_Service_Spanner_Resource_ProjectsInstances extends Google_Service_R
    * request. Filter rules are case insensitive. The fields eligible for filtering
    * are:
    *
-   *   * name   * display_name   * labels.key where key is the name of a label
+   *   * `name`   * `display_name`   * `labels.key` where key is the name of a
+   * label
    *
    * Some examples of using filters are:
    *
-   *   * name:* --> The instance has a name.   * name:Howl --> The instance's name
-   * contains the string "howl".   * name:HOWL --> Equivalent to above.   *
-   * NAME:howl --> Equivalent to above.   * labels.env:* --> The instance has the
-   * label "env".   * labels.env:dev --> The instance has the label "env" and the
-   * value of                        the label contains the string "dev".   *
-   * name:howl labels.env:dev --> The instance's name contains "howl" and
+   *   * `name:*` --> The instance has a name.   * `name:Howl` --> The instance's
+   * name contains the string "howl".   * `name:HOWL` --> Equivalent to above.   *
+   * `NAME:howl` --> Equivalent to above.   * `labels.env:*` --> The instance has
+   * the label "env".   * `labels.env:dev` --> The instance has the label "env"
+   * and the value of                        the label contains the string "dev".
+   * * `name:howl labels.env:dev` --> The instance's name contains "howl" and
    * it has the label "env" with its value
    * containing "dev".
    * @return Google_Service_Spanner_ListInstancesResponse

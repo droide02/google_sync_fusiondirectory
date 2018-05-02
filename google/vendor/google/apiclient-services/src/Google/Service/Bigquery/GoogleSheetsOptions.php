@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,8 +17,17 @@
 
 class Google_Service_Bigquery_GoogleSheetsOptions extends Google_Model
 {
+  public $range;
   public $skipLeadingRows;
 
+  public function setRange($range)
+  {
+    $this->range = $range;
+  }
+  public function getRange()
+  {
+    return $this->range;
+  }
   public function setSkipLeadingRows($skipLeadingRows)
   {
     $this->skipLeadingRows = $skipLeadingRows;

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,6 +18,7 @@
 class Google_Service_AdExchangeBuyer_Account extends Google_Collection
 {
   protected $collection_key = 'bidderLocation';
+  public $applyPretargetingToNonGuaranteedDeals;
   protected $bidderLocationType = 'Google_Service_AdExchangeBuyer_AccountBidderLocation';
   protected $bidderLocationDataType = 'array';
   public $cookieMatchingNid;
@@ -28,10 +29,24 @@ class Google_Service_AdExchangeBuyer_Account extends Google_Collection
   public $maximumTotalQps;
   public $numberActiveCreatives;
 
+  public function setApplyPretargetingToNonGuaranteedDeals($applyPretargetingToNonGuaranteedDeals)
+  {
+    $this->applyPretargetingToNonGuaranteedDeals = $applyPretargetingToNonGuaranteedDeals;
+  }
+  public function getApplyPretargetingToNonGuaranteedDeals()
+  {
+    return $this->applyPretargetingToNonGuaranteedDeals;
+  }
+  /**
+   * @param Google_Service_AdExchangeBuyer_AccountBidderLocation
+   */
   public function setBidderLocation($bidderLocation)
   {
     $this->bidderLocation = $bidderLocation;
   }
+  /**
+   * @return Google_Service_AdExchangeBuyer_AccountBidderLocation
+   */
   public function getBidderLocation()
   {
     return $this->bidderLocation;

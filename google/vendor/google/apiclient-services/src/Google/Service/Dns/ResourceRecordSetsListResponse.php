@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,11 +18,27 @@
 class Google_Service_Dns_ResourceRecordSetsListResponse extends Google_Collection
 {
   protected $collection_key = 'rrsets';
+  protected $headerType = 'Google_Service_Dns_ResponseHeader';
+  protected $headerDataType = '';
   public $kind;
   public $nextPageToken;
   protected $rrsetsType = 'Google_Service_Dns_ResourceRecordSet';
   protected $rrsetsDataType = 'array';
 
+  /**
+   * @param Google_Service_Dns_ResponseHeader
+   */
+  public function setHeader(Google_Service_Dns_ResponseHeader $header)
+  {
+    $this->header = $header;
+  }
+  /**
+   * @return Google_Service_Dns_ResponseHeader
+   */
+  public function getHeader()
+  {
+    return $this->header;
+  }
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -39,10 +55,16 @@ class Google_Service_Dns_ResourceRecordSetsListResponse extends Google_Collectio
   {
     return $this->nextPageToken;
   }
+  /**
+   * @param Google_Service_Dns_ResourceRecordSet
+   */
   public function setRrsets($rrsets)
   {
     $this->rrsets = $rrsets;
   }
+  /**
+   * @return Google_Service_Dns_ResourceRecordSet
+   */
   public function getRrsets()
   {
     return $this->rrsets;

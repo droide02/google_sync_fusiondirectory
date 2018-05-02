@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -23,6 +23,8 @@ class Google_Service_Compute_AttachedDisk extends Google_Collection
   public $deviceName;
   protected $diskEncryptionKeyType = 'Google_Service_Compute_CustomerEncryptionKey';
   protected $diskEncryptionKeyDataType = '';
+  protected $guestOsFeaturesType = 'Google_Service_Compute_GuestOsFeature';
+  protected $guestOsFeaturesDataType = 'array';
   public $index;
   protected $initializeParamsType = 'Google_Service_Compute_AttachedDiskInitializeParams';
   protected $initializeParamsDataType = '';
@@ -57,13 +59,33 @@ class Google_Service_Compute_AttachedDisk extends Google_Collection
   {
     return $this->deviceName;
   }
+  /**
+   * @param Google_Service_Compute_CustomerEncryptionKey
+   */
   public function setDiskEncryptionKey(Google_Service_Compute_CustomerEncryptionKey $diskEncryptionKey)
   {
     $this->diskEncryptionKey = $diskEncryptionKey;
   }
+  /**
+   * @return Google_Service_Compute_CustomerEncryptionKey
+   */
   public function getDiskEncryptionKey()
   {
     return $this->diskEncryptionKey;
+  }
+  /**
+   * @param Google_Service_Compute_GuestOsFeature
+   */
+  public function setGuestOsFeatures($guestOsFeatures)
+  {
+    $this->guestOsFeatures = $guestOsFeatures;
+  }
+  /**
+   * @return Google_Service_Compute_GuestOsFeature
+   */
+  public function getGuestOsFeatures()
+  {
+    return $this->guestOsFeatures;
   }
   public function setIndex($index)
   {
@@ -73,10 +95,16 @@ class Google_Service_Compute_AttachedDisk extends Google_Collection
   {
     return $this->index;
   }
+  /**
+   * @param Google_Service_Compute_AttachedDiskInitializeParams
+   */
   public function setInitializeParams(Google_Service_Compute_AttachedDiskInitializeParams $initializeParams)
   {
     $this->initializeParams = $initializeParams;
   }
+  /**
+   * @return Google_Service_Compute_AttachedDiskInitializeParams
+   */
   public function getInitializeParams()
   {
     return $this->initializeParams;

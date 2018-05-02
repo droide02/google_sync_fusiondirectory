@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,11 +15,28 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_DeliveryTime extends Google_Model
+class Google_Service_ShoppingContent_DeliveryTime extends Google_Collection
 {
+  protected $collection_key = 'holidayCutoffs';
+  protected $holidayCutoffsType = 'Google_Service_ShoppingContent_HolidayCutoff';
+  protected $holidayCutoffsDataType = 'array';
   public $maxTransitTimeInDays;
   public $minTransitTimeInDays;
 
+  /**
+   * @param Google_Service_ShoppingContent_HolidayCutoff
+   */
+  public function setHolidayCutoffs($holidayCutoffs)
+  {
+    $this->holidayCutoffs = $holidayCutoffs;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_HolidayCutoff
+   */
+  public function getHolidayCutoffs()
+  {
+    return $this->holidayCutoffs;
+  }
   public function setMaxTransitTimeInDays($maxTransitTimeInDays)
   {
     $this->maxTransitTimeInDays = $maxTransitTimeInDays;

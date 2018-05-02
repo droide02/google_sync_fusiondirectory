@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -23,20 +23,33 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOut
   protected $finalMetricType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric';
   protected $finalMetricDataType = '';
   public $hyperparameters;
+  public $isTrialStoppedEarly;
   public $trialId;
 
+  /**
+   * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
+   */
   public function setAllMetrics($allMetrics)
   {
     $this->allMetrics = $allMetrics;
   }
+  /**
+   * @return Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
+   */
   public function getAllMetrics()
   {
     return $this->allMetrics;
   }
+  /**
+   * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
+   */
   public function setFinalMetric(Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric $finalMetric)
   {
     $this->finalMetric = $finalMetric;
   }
+  /**
+   * @return Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
+   */
   public function getFinalMetric()
   {
     return $this->finalMetric;
@@ -48,6 +61,14 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterOut
   public function getHyperparameters()
   {
     return $this->hyperparameters;
+  }
+  public function setIsTrialStoppedEarly($isTrialStoppedEarly)
+  {
+    $this->isTrialStoppedEarly = $isTrialStoppedEarly;
+  }
+  public function getIsTrialStoppedEarly()
+  {
+    return $this->isTrialStoppedEarly;
   }
   public function setTrialId($trialId)
   {

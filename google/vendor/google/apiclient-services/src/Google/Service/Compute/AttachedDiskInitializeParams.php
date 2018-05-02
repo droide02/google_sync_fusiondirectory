@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -20,6 +20,7 @@ class Google_Service_Compute_AttachedDiskInitializeParams extends Google_Model
   public $diskName;
   public $diskSizeGb;
   public $diskType;
+  public $labels;
   public $sourceImage;
   protected $sourceImageEncryptionKeyType = 'Google_Service_Compute_CustomerEncryptionKey';
   protected $sourceImageEncryptionKeyDataType = '';
@@ -48,6 +49,14 @@ class Google_Service_Compute_AttachedDiskInitializeParams extends Google_Model
   {
     return $this->diskType;
   }
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  public function getLabels()
+  {
+    return $this->labels;
+  }
   public function setSourceImage($sourceImage)
   {
     $this->sourceImage = $sourceImage;
@@ -56,10 +65,16 @@ class Google_Service_Compute_AttachedDiskInitializeParams extends Google_Model
   {
     return $this->sourceImage;
   }
+  /**
+   * @param Google_Service_Compute_CustomerEncryptionKey
+   */
   public function setSourceImageEncryptionKey(Google_Service_Compute_CustomerEncryptionKey $sourceImageEncryptionKey)
   {
     $this->sourceImageEncryptionKey = $sourceImageEncryptionKey;
   }
+  /**
+   * @return Google_Service_Compute_CustomerEncryptionKey
+   */
   public function getSourceImageEncryptionKey()
   {
     return $this->sourceImageEncryptionKey;

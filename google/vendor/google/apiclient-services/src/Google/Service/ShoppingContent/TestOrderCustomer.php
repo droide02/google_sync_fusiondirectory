@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -20,6 +20,8 @@ class Google_Service_ShoppingContent_TestOrderCustomer extends Google_Model
   public $email;
   public $explicitMarketingPreference;
   public $fullName;
+  protected $marketingRightsInfoType = 'Google_Service_ShoppingContent_TestOrderCustomerMarketingRightsInfo';
+  protected $marketingRightsInfoDataType = '';
 
   public function setEmail($email)
   {
@@ -44,5 +46,19 @@ class Google_Service_ShoppingContent_TestOrderCustomer extends Google_Model
   public function getFullName()
   {
     return $this->fullName;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_TestOrderCustomerMarketingRightsInfo
+   */
+  public function setMarketingRightsInfo(Google_Service_ShoppingContent_TestOrderCustomerMarketingRightsInfo $marketingRightsInfo)
+  {
+    $this->marketingRightsInfo = $marketingRightsInfo;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_TestOrderCustomerMarketingRightsInfo
+   */
+  public function getMarketingRightsInfo()
+  {
+    return $this->marketingRightsInfo;
   }
 }

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -31,6 +31,19 @@ class Google_Service_Compute_Resource_Images extends Google_Service_Resource
    * @param string $project Project ID for this request.
    * @param string $image Name of the image resource to delete.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string requestId An optional request ID to identify requests.
+   * Specify a unique request ID so that if you must retry your request, the
+   * server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the
+   * request times out. If you make the request again with the same request ID,
+   * the server can check if original operation with the same request ID was
+   * received, and if so, will ignore the second request. This prevents clients
+   * from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not
+   * supported (00000000-0000-0000-0000-000000000000).
    * @return Google_Service_Compute_Operation
    */
   public function delete($project, $image, $optParams = array())
@@ -49,6 +62,19 @@ class Google_Service_Compute_Resource_Images extends Google_Service_Resource
    * @param string $image Image name.
    * @param Google_Service_Compute_DeprecationStatus $postBody
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string requestId An optional request ID to identify requests.
+   * Specify a unique request ID so that if you must retry your request, the
+   * server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the
+   * request times out. If you make the request again with the same request ID,
+   * the server can check if original operation with the same request ID was
+   * received, and if so, will ignore the second request. This prevents clients
+   * from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not
+   * supported (00000000-0000-0000-0000-000000000000).
    * @return Google_Service_Compute_Operation
    */
   public function deprecate($project, $image, Google_Service_Compute_DeprecationStatus $postBody, $optParams = array())
@@ -94,6 +120,20 @@ class Google_Service_Compute_Resource_Images extends Google_Service_Resource
    * @param string $project Project ID for this request.
    * @param Google_Service_Compute_Image $postBody
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param bool forceCreate Force image creation if true.
+   * @opt_param string requestId An optional request ID to identify requests.
+   * Specify a unique request ID so that if you must retry your request, the
+   * server will know to ignore the request if it has already been completed.
+   *
+   * For example, consider a situation where you make an initial request and the
+   * request times out. If you make the request again with the same request ID,
+   * the server can check if original operation with the same request ID was
+   * received, and if so, will ignore the second request. This prevents clients
+   * from accidentally creating duplicate commitments.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is not
+   * supported (00000000-0000-0000-0000-000000000000).
    * @return Google_Service_Compute_Operation
    */
   public function insert($project, Google_Service_Compute_Image $postBody, $optParams = array())
@@ -103,8 +143,8 @@ class Google_Service_Compute_Resource_Images extends Google_Service_Resource
     return $this->call('insert', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Retrieves the list of private images available to the specified project.
-   * Private images are images you create that belong to your project. This method
+   * Retrieves the list of custom images available to the specified project.
+   * Custom images are images you create that belong to your project. This method
    * does not get any images that belong to other projects, including publicly-
    * available images, like Debian 8. If you want to get a list of publicly-
    * available images, use this method to make a request to the respective image
@@ -113,30 +153,26 @@ class Google_Service_Compute_Resource_Images extends Google_Service_Resource
    * @param string $project Project ID for this request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string filter Sets a filter expression for filtering listed
-   * resources, in the form filter={expression}. Your {expression} must be in the
-   * format: field_name comparison_string literal_string.
+   * @opt_param string filter A filter expression that filters resources listed in
+   * the response. The expression must specify the field name, a comparison
+   * operator, and the value that you want to use for filtering. The value must be
+   * a string, a number, or a boolean. The comparison operator must be either =,
+   * !=, >, or <.
    *
-   * The field_name is the name of the field you want to compare. Only atomic
-   * field types are supported (string, number, boolean). The comparison_string
-   * must be either eq (equals) or ne (not equals). The literal_string is the
-   * string value to filter to. The literal value must be valid for the type of
-   * field you are filtering by (string, number, boolean). For string fields, the
-   * literal value is interpreted as a regular expression using RE2 syntax. The
-   * literal value must match the entire field.
+   * For example, if you are filtering Compute Engine instances, you can exclude
+   * instances named example-instance by specifying name != example-instance.
    *
-   * For example, to filter for instances that do not have a name of example-
-   * instance, you would use filter=name ne example-instance.
-   *
-   * You can filter on nested fields. For example, you could filter on instances
-   * that have set the scheduling.automaticRestart field to true. Use filtering on
-   * nested fields to take advantage of labels to organize and search for results
-   * based on label values.
+   * You can also filter nested fields. For example, you could specify
+   * scheduling.automaticRestart = false to include instances only if they are not
+   * scheduled for automatic restarts. You can use filtering on nested fields to
+   * filter based on resource labels.
    *
    * To filter on multiple expressions, provide each separate expression within
-   * parentheses. For example, (scheduling.automaticRestart eq true) (zone eq us-
-   * central1-f). Multiple expressions are treated as AND expressions, meaning
-   * that resources must match all expressions to pass the filters.
+   * parentheses. For example, (scheduling.automaticRestart = true) (cpuPlatform =
+   * "Intel Skylake"). By default, each expression is an AND expression. However,
+   * you can include AND and OR expressions explicitly. For example, (cpuPlatform
+   * = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND
+   * (scheduling.automaticRestart = true).
    * @opt_param string maxResults The maximum number of results per page that
    * should be returned. If the number of available results is larger than
    * maxResults, Compute Engine returns a nextPageToken that can be used to get
@@ -162,5 +198,21 @@ class Google_Service_Compute_Resource_Images extends Google_Service_Resource
     $params = array('project' => $project);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_Compute_ImageList");
+  }
+  /**
+   * Sets the labels on an image. To learn more about labels, read the Labeling
+   * Resources documentation. (images.setLabels)
+   *
+   * @param string $project Project ID for this request.
+   * @param string $resource Name of the resource for this request.
+   * @param Google_Service_Compute_GlobalSetLabelsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Compute_Operation
+   */
+  public function setLabels($project, $resource, Google_Service_Compute_GlobalSetLabelsRequest $postBody, $optParams = array())
+  {
+    $params = array('project' => $project, 'resource' => $resource, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('setLabels', array($params), "Google_Service_Compute_Operation");
   }
 }

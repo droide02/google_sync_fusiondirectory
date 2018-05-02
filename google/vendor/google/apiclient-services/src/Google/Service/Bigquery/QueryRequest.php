@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -22,6 +22,7 @@ class Google_Service_Bigquery_QueryRequest extends Google_Collection
   protected $defaultDatasetDataType = '';
   public $dryRun;
   public $kind;
+  public $location;
   public $maxResults;
   public $parameterMode;
   public $preserveNulls;
@@ -32,10 +33,16 @@ class Google_Service_Bigquery_QueryRequest extends Google_Collection
   public $useLegacySql;
   public $useQueryCache;
 
+  /**
+   * @param Google_Service_Bigquery_DatasetReference
+   */
   public function setDefaultDataset(Google_Service_Bigquery_DatasetReference $defaultDataset)
   {
     $this->defaultDataset = $defaultDataset;
   }
+  /**
+   * @return Google_Service_Bigquery_DatasetReference
+   */
   public function getDefaultDataset()
   {
     return $this->defaultDataset;
@@ -55,6 +62,14 @@ class Google_Service_Bigquery_QueryRequest extends Google_Collection
   public function getKind()
   {
     return $this->kind;
+  }
+  public function setLocation($location)
+  {
+    $this->location = $location;
+  }
+  public function getLocation()
+  {
+    return $this->location;
   }
   public function setMaxResults($maxResults)
   {
@@ -88,10 +103,16 @@ class Google_Service_Bigquery_QueryRequest extends Google_Collection
   {
     return $this->query;
   }
+  /**
+   * @param Google_Service_Bigquery_QueryParameter
+   */
   public function setQueryParameters($queryParameters)
   {
     $this->queryParameters = $queryParameters;
   }
+  /**
+   * @return Google_Service_Bigquery_QueryParameter
+   */
   public function getQueryParameters()
   {
     return $this->queryParameters;
